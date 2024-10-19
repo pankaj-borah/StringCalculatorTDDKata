@@ -19,3 +19,7 @@ test('handle new lines between numbers', () => {
 test('support custom delimiters', () => {
     expect(add("//;\n1;2")).toBe(3);
 });
+
+test('throw an error for negative numbers', () => {
+    expect(() => add("1,-2,3")).toThrow("negative numbers not allowed -2");
+});
